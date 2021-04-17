@@ -7,12 +7,12 @@ Two datasets are provided:
 
 <kbd> <img src="images/music_service.png/?raw=true"/> </kbd>
 
-<ins>In a first phase we focus on the Sparkify mini dataset :  </ins>\
+<ins>1. In a first phase we focus on the Sparkify mini dataset :  </ins>\
   [ ] Load and perform EDA on the mini dataset answering business questions as we go along \
   [ ] Identify customer that have churned  \
   [ ] Transform the dadaset with the appropriate features and label so that supervised machine learning framework can be used  
 
-  <ins>With a better understanding of the dataset, we then turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>\
+  <ins>2. With a better understanding of the dataset, in a second phase, we turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>\
   [ ] Load and perform EDA on the large dataset \
   [ ] Pre-process the dataset, feature engineer and labels  \
   [ ] Explore the processed dataset and perfom survival analysis \
@@ -20,13 +20,12 @@ Two datasets are provided:
   [ ] Evaluate models and assess results 
 
 
-<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-For reference: All databircks html notebooks can be found below:
-[mini dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/1-Mini_Sparkify-Load_and_Investigate.html)
-[mini dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
-[large dataset-EDA(https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/1-Large_Sparkify-Load_Dataset_and_Investigate_EDA.html)
-[large dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/2-Large_Sparkify-Preprocessing.html)	
-[large dataset-modelling](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
+For reference: All databricks html notebooks can be found below:
+* [mini dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/1-Mini_Sparkify-Load_and_Investigate.html)
+* [mini dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
+* [large dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/1-Large_Sparkify-Load_Dataset_and_Investigate_EDA.html)
+* [large dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/2-Large_Sparkify-Preprocessing.html)	
+* [large dataset-modelling](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
 
 ---
 
@@ -64,10 +63,8 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   ## Dataset Characteristics  
   * The mini sparkify dataset contains music choices from 225 customers over a 60 days period. The size of this mini dataset is 286,500 rows. 
   
-  * <ins>The dataset is composed on the following features and can be thought of as a sequence of service user events and music listened </ins>:
-  
-  <ins>**Sparkify features**<i/ns> :
-  ```
+  <ins>The dataset is composed on the following features and can be thought of as a sequence of service user events and music listened </ins>:
+    ```
     artist: string - artist name
     auth: string  - authentification method
     firstName: string - user first name
@@ -188,18 +185,19 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
 ---
 
-# 3. Transform the dataset with the appropriate features and label so that supervised machine learning framework can be used
+# 3. The Sparkify Mini Dataset - Transform the dataset with the appropriate features and label so that supervised machine learning framework can be used
 
 In the following notebook, we label, transform and feature engineer the orginal dataset with each row corresponding to a user. The label **churn** flags whether this user has churned based on the chrun definition discussion above.
+
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
+Refer to the following preprocessing notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
+
 Steps followed:
   1. aggregate the data for each user, drop features uncorrelated to churn
   2. engineer features features - count of events, songs for each user, tenure in days and time from registration to first use
   3. label each user (row) a binary **churn** features  
   3. clean the data set and removing rows with null value
   4. save the clean dataset in a Spark table
-
-<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-Refer to the following preprocessing notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
 
   <ins>**The sparkify transformed labeled dataset ready a supervised binary classification is described below:** </ins>:
   ```
@@ -316,7 +314,7 @@ From the survival chart we can see that:
 
 ## Model and predict customer churn 
 
-In the following notebook, we use the labeled dataset to fit and evaluate churn predictions for 4 Spark ML algos.
+In the following notebook, we use the labeled dataset to fit models and evaluate churn predictions for 4 Spark ML algos.
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
 Refer to the following html notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
@@ -371,7 +369,8 @@ These seem to mak sense as their are a direct reflection of the user's sentiment
 # 5. Conclusion 
 
 We used the mini dataset to get a good understanding of the Sparkify service and users. This helped us define, identify customer churn and how to transform the raw data.
-We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good resuts with an ROC 0f ~0.97.  
+
+We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good results with an ROC of ~0.97.  
 
 Using the Databricks ecosystem was a great way to ease in the big data and Spark ecosystem. In addition we used Spark MLflow to track, save and inventory the models and experiment results obtained along the way.  
 <kbd> <img src="images/MLflow.PNG/?raw=true" width="1000"> </kbd>
