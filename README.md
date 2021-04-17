@@ -176,7 +176,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
   Lets look at what happens before and after a **Cancellation Confirmation** event occurs for a given user (userid 100015):
   1. the user has a paying subscription
-  2. the user goes to the downgrade page
+  2. the user goes to the Cancel page
   3. the user submits Cancellation Confirmation
   4. the user has now ended the sparkify subscription
 
