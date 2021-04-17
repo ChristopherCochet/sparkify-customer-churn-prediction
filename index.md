@@ -294,7 +294,7 @@ Refer to the following html notebook [here](https://raw.githack.com/ChristopherC
 
 * **What propotion of Spakify customers have churned ?**  
 ```
-Overall, 40% of Sparkify users have churned in the dataset
+Overall, 40% of Sparkify users have churned in the dataset. We therefore won't need to deal with an imbalanced dataset while modelling. 
 ```
 
 <kbd> <img src="images/churn-proportion.PNG/?raw=true"/> </kbd>
@@ -320,7 +320,7 @@ From the survival chart we can see that:
 
 ## Model and predict customer churn 
 
-In the following notebook, we use the labeled dataset to fit models and evaluate churn predictions for 4 Spark ML algos.
+In the following notebook, we use the labeled dataset to fit models and evaluate churn predictions for 4 Spark ML algos. This a binary classification where the proportion of customer churned in the transformed dataset is well balanced as disucssed in the previous section.
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
 Refer to the following html notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
