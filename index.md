@@ -5,9 +5,11 @@ Two datasets are provided:
  * a mini dataset that we use to explore and get an understanding of the dataset's characteristics and features 
  * a large dataset (12GB), for which Spark and Hadoop are required to manipulate - we use the databricks big data ecosystem (PySpark, Spark SQL, Spark ML, ML Flow) to do so. 
 
-
 <kbd> <img src="images/music_service.png/?raw=true"/> </kbd>
 
+
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
+All notebooks can be found here: [here](https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/tree/main/databricks-notebooks/mini-dataset)
 
 <ins>In a first phase we focus on the Sparkify mini dataset :  </ins>\
   [ ] Load and perform EDA on the mini dataset answering business questions as we go along \
@@ -94,32 +96,47 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
   ### Sparkify mini dataset EDA Notebook
   
+  <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
   Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
 
-  **What is the distribution of of users by gender ?**
-  ```* Users are fairly well balanced by gender, 212 males vs 104 females ```
+  * **What is the distribution of of users by gender ?**
+  ```
+  Users are fairly well balanced by gender, 212 males vs 104 females
+  ```
 
-  **How many users were paying for the service using the first and last event recorded forach user in the dataset**
-  ```* Out of 225 users, 48 (22 %) had a paid subscription at the earliest date recorded in dataset vs 177 (88 %) users which did not (free subscription) ```
-  ```* Out of 225 users, 145 (65 %) had a paid subscription at the latest date recorded in dataset vs 80 (35 %) users which did not (free subscription)```
+  * **How many users were paying for the service using the first and last event recorded forach user in the dataset**
+  ```
+  Out of 225 users, 48 (22 %) had a paid subscription at the earliest date recorded in dataset vs 177 (88 %) users which did not (free subscription)
+  Out of 225 users, 145 (65 %) had a paid subscription at the latest date recorded in dataset vs 80 (35 %) users which did not (free subscription)
+  ```
 
-  **Which users listened to the most songs ?**
-  ```* user 39 listened to ~6k songs in two months and average of 100 songs per days !```
-  ```* users 92 and 140 listened to ~4,500 songs over two months```
+  * **Which users listened to the most songs ?**
+  ```
+  user 39 listened to ~6k songs in two months and average of 100 songs per days !
+  users 92 and 140 listened to ~4,500 songs over two months
+  ```
 
-  **Where are the most service users located ?**
-  * LA & NY are where most of service users are located 
+  * **Where are the most service users located ?**
+  ```
+  LA & NY are where most of service users are located
+  ```
 
-  **How many unique artists & songs does the dataset have ?**
-  ```* The dataset holds approx. 17K artists and 58k songs```
+  * **How many unique artists & songs does the dataset have ?**
+  ```
+  The dataset holds approx. 17K artists and 58k songs
+  ```
 
-  **What are the most popular songs ? arists ?**
-  ```* The most populat songs are **1 - You're The One by Dwight Yoakam** , **2 - Undo by Bjork** , **3 - Revelry by Kings Of Leon**```
-  ```* The most populat artists are **1 - Kings Of Leon** , **2 - Coldplay** , **3 - Florence + The Machine**```
+  * **What are the most popular songs ? arists ?**
+  ```
+  The most populat songs are **1 - You're The One by Dwight Yoakam** , **2 - Undo by Bjork** , **3 - Revelry by Kings Of Leon**
+  The most populat artists are **1 - Kings Of Leon** , **2 - Coldplay** , **3 - Florence + The Machine**
+  ```
 
-  **Which users listened to the most songs ?**
-  ```* user 39 listened to ~6k songs over a two months period, average of 100 songs per days```
-  ```* users 92 and 140 listened to ~4,500 songs over two months```
+  * **Which users listened to the most songs ?**
+  ```
+  user 39 listened to ~6k songs over a two months period, average of 100 songs per days```
+  users 92 and 140 listened to ~4,500 songs over two months
+  ```
 
   ## Tracking our progress
   [X] Load and perform EDA on the mini dataset answering business questions as we go along \
@@ -133,8 +150,12 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   ## How should a user churn be defined ?
 
   The relevant features to identify whether a customer has changed are **page** and **level** features of the data sets.
-  ```* **level** : possible values  -> ['free', 'paid'] ```
-  ```* **page** : possible values  -> ['Cancel', 'Submit Downgrade', 'Thumbs Down', 'Home', 'Downgrade', 'Roll Advert', 'Logout', 'Save Settings', 'Cancellation Confirmation', 'About', 'Settings', 'Add to Playlist', 'Add Friend', 'NextSong', 'Thumbs Up', 'Help', 'Upgrade', 'Error', 'Submit Upgrade'] ```
+  ```
+  **level** : possible values  -> ['free', 'paid'] 
+  ```
+  ```
+  **page** : possible values  -> ['Cancel', 'Submit Downgrade', 'Thumbs Down', 'Home', 'Downgrade', 'Roll Advert', 'Logout', 'Save Settings', 'Cancellation Confirmation', 'About', 'Settings', 'Add to Playlist', 'Add Friend', 'NextSong', 'Thumbs Up', 'Help', 'Upgrade', 'Error', 'Submit Upgrade'] 
+  ```
 
 > **Submit Downgrade** and **Cancellation Confirmation** event type seem be good proxies to identify whether a customer has churned or not
     
@@ -171,6 +192,7 @@ Steps followed:
   3. clean the data set and removing rows with null value
   4. save the clean dataset in a Spark table
 
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
 Refer to the following preprocessing notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
 
   **The sparkify transformed labeled dataset ready a supervised binary classification is described below:** :
@@ -224,43 +246,57 @@ With a better understanding of the sparkify mini dataset and features, we now pe
 The large sparkify dataset contains music choices from 22,278 customers over a 60 days period. The size of this mini dataset is 26,259,199 rows. 
 
 ## Perform EDA on the large dataset 
-  
+
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd> 
 Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
 
 Key dataset highlights:
 
- **What is the distribution of of users by gender ?**
-  ```* Similar to the mini dataset, Users are  well balanced by gender, 11.6k males vs 10.6k females ```
+* **What is the distribution of of users by gender ?**
+  ```
+  Similar to the mini dataset, Users are  well balanced by gender, 11.6k males vs 10.6k females
+  ```
 
-  **Which users listened to the most songs ?**
-  ```* user 1564221 listened to ~8k songs in two months, anavegare of 132 songs per days!```
+* **Which users listened to the most songs ?**
+  ```
+  user 1564221 listened to ~8k songs in two months, anavegare of 132 songs per days!
+  ```
 
-  **Where are the most service users located ?**
-  ```* Similar to the mini dataset, LA & NY are where most of service users are located ```
+* **Where are the most service users located ?**
+  ```
+  Similar to the mini dataset, LA & NY are where most of service users are located
+  ```
 
-  **Which users listened to the most songs ?**
-  ```* user 1564221 listened to ~8k songs in two months, anavegare of 132 songs per days.```
+* **Which users listened to the most songs ?**
+  ```
+  user 1564221 listened to ~8k songs in two months, anavegare of 132 songs per days
+  ```
 
 ## Perform EDA on the tranformed labeled dataset
 
- **What propotion of Spakify customers have churned ?**  
-```* Overall, 40% of Sparkify users have churned in the dataset.```
+* **What propotion of Spakify customers have churned ?**  
+```
+Overall, 40% of Sparkify users have churned in the dataset
+```
 
 <kbd> <img src="images/churn-proportion.PNG/?raw=true"/> </kbd>
 
-**Compute average user tenure by gender**
-```* The average tenure in the dataset is 40 days and very similar between males and female Sparkify users```
-```* The tenure distribution is left skewed but we can see a peak very early with over 1200 users that seem to have quit on the first day of usage```
+* **Compute average user tenure by gender**
+```
+* The average tenure in the dataset is 40 days and very similar between males and female Sparkify users
+* The tenure distribution is left skewed but we can see a peak very early with over 1200 users that seem to have quit on the first day of usage
+```
 
 <kbd> <img src="images/tenure-distribution.PNG/?raw=true"/> </kbd>
 
-**What does the progression of churn over time look like (survival analsyis)?**  
-
+* **What does the progression of churn over time look like (survival analsyis)?**  
+```
 From the survival chart we can see that:
 * 40% of customers have churned over a 2 months period
 * Male and Female survival plots and churn profiles are very similar
 * Sparkify seems to lose customer at faster clip within the first couple of days and then after the ~55 day mark where the curve is much steeper
 * It takes approx. 55 days to reach 30% of user churn and then 5 days to see 10% more users churn
+```
 
 <kbd> <img src="images/survival-analysis.PNG/?raw=true"/> </kbd>
 
@@ -268,6 +304,7 @@ From the survival chart we can see that:
 
 In the following notebook, we use the labeled dataset to fit and evaluate churn predictions for 4 Spark ML algos.
 
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
 Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
 
 Steps followed:
@@ -308,6 +345,7 @@ For the Boosted Tree model, the features most important for the user churn class
 
 These seem to mak sense as their are a direct reflection of the user's sentiment about the Sparkify service. Suprisingly, **service tenure** seem to have little importance on the binary classification. 
 
+## Tracking our progress
   [X] Load and perform EDA on the large dataset \
   [X] Pre-process the dataset, feature engineer and labels  \
   [X] Explore the processed dataset and perfom survival analysis \
@@ -322,8 +360,11 @@ We used the mini dataset to get a good understanding of the Sparkify service and
 We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good resuts with an ROC 0f ~0.97.  
 
 Using the Databricks ecosystem was a great way to ease in the big data and Spark ecosystem. In addition we used Spark MLflow to track, save and inventory the models and experiment results obtained along the way.  
+<kbd> <img src="images/MLflow.PNG/?raw=true" width="1000"> </kbd>
+
 > MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
+
+<kbd> <img src="images/mlflow-overview.png/?raw=true"/> </kbd>
 
 reference: https://mlflow.org/
 
-<kbd> <img src="images/MLflow.PNG/?raw=true"/> </kbd>
