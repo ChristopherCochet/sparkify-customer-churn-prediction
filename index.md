@@ -7,10 +7,6 @@ Two datasets are provided:
 
 <kbd> <img src="images/music_service.png/?raw=true"/> </kbd>
 
-
-<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-All notebooks can be found here: [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/tree/main/databricks-notebooks/mini-dataset)
-
 <ins>In a first phase we focus on the Sparkify mini dataset :  </ins>\
   [ ] Load and perform EDA on the mini dataset answering business questions as we go along \
   [ ] Identify customer that have churned  \
@@ -22,7 +18,16 @@ All notebooks can be found here: [here](https://raw.githack.com/ChristopherCoche
   [ ] Explore the processed dataset and perfom survival analysis \
   [ ] Model and predict customer churn using Spark's ML libraries \
   [ ] Evaluate models and assess results 
-  
+
+
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
+For reference: All databircks html notebooks can be found below:
+[mini dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/1-Mini_Sparkify-Load_and_Investigate.html)
+[mini dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
+[large dataset-EDA(https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/1-Large_Sparkify-Load_Dataset_and_Investigate_EDA.html)
+[large dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/2-Large_Sparkify-Preprocessing.html)	
+[large dataset-modelling](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
+
 ---
 
 # Background: The Sparkify streaming service and Databricks
@@ -60,7 +65,8 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   * The mini sparkify dataset contains music choices from 225 customers over a 60 days period. The size of this mini dataset is 286,500 rows. 
   
   * <ins>The dataset is composed on the following features and can be thought of as a sequence of service user events and music listened </ins>:
-  **Sparkify features** :
+  
+  <ins>**Sparkify features**<i/ns> :
   ```
     artist: string - artist name
     auth: string  - authentification method
@@ -82,7 +88,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
     userId: string - unique userid 
   ```
 
-  The dataset's features can be broken down into four categories:
+  <ins>The dataset's features can be broken down into four categories </ins>:
   * **User information** : userid, first name, last name, gender, location
   * **Sparkify service information** : level, registration
   * **User service event/interactions information** : method, iteminsession, page, status, ts, useragent, sessionid
@@ -151,10 +157,10 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
   The relevant features to identify whether a customer has changed are **page** and **level** features of the data sets.
   ```
-  **level** : possible values  -> ['free', 'paid'] 
+  level : possible values  -> ['free', 'paid'] 
   ```
   ```
-  **page** : possible values  -> ['Cancel', 'Submit Downgrade', 'Thumbs Down', 'Home', 'Downgrade', 'Roll Advert', 'Logout', 'Save Settings', 'Cancellation Confirmation', 'About', 'Settings', 'Add to Playlist', 'Add Friend', 'NextSong', 'Thumbs Up', 'Help', 'Upgrade', 'Error', 'Submit Upgrade'] 
+  page : possible values  -> ['Cancel', 'Submit Downgrade', 'Thumbs Down', 'Home', 'Downgrade', 'Roll Advert', 'Logout', 'Save Settings', 'Cancellation Confirmation', 'About', 'Settings', 'Add to Playlist', 'Add Friend', 'NextSong', 'Thumbs Up', 'Help', 'Upgrade', 'Error', 'Submit Upgrade'] 
   ```
 
 > **Submit Downgrade** and **Cancellation Confirmation** event type seem be good proxies to identify whether a customer has churned or not
@@ -193,9 +199,9 @@ Steps followed:
   4. save the clean dataset in a Spark table
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-Refer to the following preprocessing notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini Sparkify-Preprocessing.html)
+Refer to the following preprocessing notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
 
-  **The sparkify transformed labeled dataset ready a supervised binary classification is described below:** :
+  <ins>**The sparkify transformed labeled dataset ready a supervised binary classification is described below:** </ins>:
   ```
     userId                  object  - unique user id
     gender_first            object  - user gender
@@ -315,7 +321,7 @@ In the following notebook, we use the labeled dataset to fit and evaluate churn 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
 Refer to the following html notebook [here](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/3-Large_Sparkify-Modelling_and_Evaluation.html)
 
-Steps followed:
+<ins>Steps followed</ins>:
   1. This is a binary calssification - an appropriate evaluation metric that we used is ROC-AUC (**areaUnderROC**)
   2. Use spark pipelines to transform features using Spark's **VectorAssembler** which combines a  list of columns into a single feature vector
   3. Split the processed dataset into train and a test sets 
@@ -345,7 +351,7 @@ All classifiers reported a ROC score above 90% with the Gradient Boosted Tree mo
 
 <kbd> <img src="images/feature_importance.PNG/?raw=true"/> </kbd>
 
-For the Boosted Tree model, the features most important for the user churn classification were:
+<ins>For the Boosted Tree model, the features most important for the user churn classification were</ins>:
 1. The **Cancel** event count
 2. The **Submit Upgrade** event count
 3. The **Downgrade** event count
