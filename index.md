@@ -1,6 +1,7 @@
 # Sparkify - Predicting customer churn for a popular music streaming service  
 
 **Project description:** In this project we predict customer churn on a large user behavior dataset using Spark and Databricks.
+
 Two datasets are provided: 
  * a mini dataset that we use to explore and get an understanding of the dataset's characteristics and features 
  * a large dataset (12GB), for which Spark and Hadoop are required to manipulate - we use the databricks big data ecosystem (PySpark, Spark SQL, Spark ML, ML Flow) to do so. 
@@ -56,6 +57,9 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
   We will be using Databricks Community Edition to analyze the Sparkify dataset and model customer churn. 
 
+  
+<kbd> <img src="images/Databricks Community Edition.gif/?raw=true"/> </kbd
+
 ---
 
   # 1. The Sparkify Mini Dataset - Load the mini dataset and perform EDA answering service usage
@@ -64,26 +68,26 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   * The mini sparkify dataset contains music choices from 225 customers over a 60 days period. The size of this mini dataset is 286,500 rows. 
   
   <ins>The dataset is composed on the following features and can be thought of as a sequence of service user events and music listened </ins>:
-    ```
-    artist: string - artist name
-    auth: string  - authentification method
-    firstName: string - user first name
-    gender: string - user gender
-    itemInSession: long
-    lastName: string - user last name
-    length: double - length of the song listened
-    level: string - sparkifiy user service level (paid or free)
-    location: string - location of the user
-    method: string - http service method
-    page: - user service interaction event 
-    registration: long - timestamp of user service registration 
-    sessionId: service session id
-    song: song name played by the user
-    status: - http status
-    ts: long - timestamp of user service event 
-    userAgent: - web browser used
-    userId: string - unique userid 
   ```
+  artist: string - artist name
+  auth: string  - authentification method
+  firstName: string - user first name
+  gender: string - user gender
+  itemInSession: long
+  lastName: string - user last name
+  length: double - length of the song listened
+  level: string - sparkifiy user service level (paid or free)
+  location: string - location of the user
+  method: string - http service method
+  page: - user service interaction event 
+  registration: long - timestamp of user service registration 
+  sessionId: service session id
+  song: song name played by the user
+  status: - http status
+  ts: long - timestamp of user service event 
+  userAgent: - web browser used
+  userId: string - unique userid 
+```
 
   <ins>The dataset's features can be broken down into four categories </ins>:
   * **User information** : userid, first name, last name, gender, location
@@ -198,6 +202,8 @@ Steps followed:
   3. label each user (row) a binary **churn** features  
   3. clean the data set and removing rows with null value
   4. save the clean dataset in a Spark table
+
+
 
   <ins>**The sparkify transformed labeled dataset ready a supervised binary classification is described below:** </ins>:
   ```
@@ -370,7 +376,7 @@ These seem to mak sense as their are a direct reflection of the user's sentiment
 
 We used the mini dataset to get a good understanding of the Sparkify service and users. This helped us define, identify customer churn and how to transform the raw data.
 
-We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good results with an ROC of ~0.97.  
+We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good resuts with an ROC 0f ~0.97.  
 
 Using the Databricks ecosystem was a great way to ease in the big data and Spark ecosystem. In addition we used Spark MLflow to track, save and inventory the models and experiment results obtained along the way.  
 <kbd> <img src="images/MLflow.PNG/?raw=true" width="1000"> </kbd>
