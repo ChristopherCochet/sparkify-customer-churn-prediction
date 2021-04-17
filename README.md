@@ -376,7 +376,7 @@ These seem to mak sense as their are a direct reflection of the user's sentiment
 
 We used the mini dataset to get a good understanding of the Sparkify service and users. This helped us define, identify customer churn and how to transform the raw data.
 
-We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good resuts with an ROC 0f ~0.97.  
+We were then able to apply the necessary transformations to the large dataset and label the data so that we could apply a supervised binary classification approach to predicting customer churn. We seem to have obtained very good results with an ROC of ~0.97.  
 
 Using the Databricks ecosystem was a great way to ease in the big data and Spark ecosystem. In addition we used Spark MLflow to track, save and inventory the models and experiment results obtained along the way.  
 <kbd> <img src="images/MLflow.PNG/?raw=true" width="1000"> </kbd>
