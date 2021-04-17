@@ -97,7 +97,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   ### Sparkify mini dataset EDA Notebook
   
   <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-  Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
+  Refer to the following notebook [here](https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/databricks-notebooks/mini-dataset/1.%20Mini%20Sparkify%20-%20Load%20and%20Investigate.html)
 
   * **What is the distribution of of users by gender ?**
   ```
@@ -193,7 +193,7 @@ Steps followed:
   4. save the clean dataset in a Spark table
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-Refer to the following preprocessing notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
+Refer to the following preprocessing notebook [here](https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/databricks-notebooks/mini-dataset/2.%20Mini%20Sparkify%20-%20Preprocessing.html)
 
   **The sparkify transformed labeled dataset ready a supervised binary classification is described below:** :
   ```
@@ -248,7 +248,7 @@ The large sparkify dataset contains music choices from 22,278 customers over a 6
 ## Perform EDA on the large dataset 
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd> 
-Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
+Refer to the following html notebook [here](https://htmlpreview.github.io/?https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/databricks-notebooks/large-dataset/1.%20Large%20Sparkify%20-%20Load%20Dataset%20and%20Investigate-EDA.html)
 
 Key dataset highlights:
 
@@ -271,6 +271,14 @@ Key dataset highlights:
   ```
   user 1564221 listened to ~8k songs in two months, anavegare of 132 songs per days
   ```
+
+## Tranform the large Sparkify dataset 
+
+We follow the steps used to preprocess the Sparkify mini dataset and apply these for the large dataset 
+ 
+<kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd> 
+Refer to the following html notebook [here](https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/databricks-notebooks/large-dataset/2.%20Large%20Sparkify%20-%20Preprocessing.html)
+
 
 ## Perform EDA on the tranformed labeled dataset
 
@@ -305,7 +313,7 @@ From the survival chart we can see that:
 In the following notebook, we use the labeled dataset to fit and evaluate churn predictions for 4 Spark ML algos.
 
 <kbd> <img src="https://christophercochet.github.io/Market-Basket-Analysis/images/jupyter.png"/> </kbd>
-Refer to the following notebook [here](https://github.com/ChristopherCochet/Market-Basket-Analysis/blob/main/1%20-%20Basket%20Analysis%20-%20Data%20Preparation%20and%20Understanding.ipynb)
+Refer to the following html notebook [here](https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/databricks-notebooks/large-dataset/3.%20Large%20Sparkify%20-%20Modelling%20and%20Evaluation.html)
 
 Steps followed:
   1. This is a binary calssification - an appropriate evaluation metric that we used is ROC-AUC (**areaUnderROC**)
