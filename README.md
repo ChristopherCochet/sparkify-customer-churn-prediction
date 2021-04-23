@@ -21,7 +21,7 @@ Two datasets are provided:
   * Evaluate models and assess results 
 
 
-For reference: All databricks html notebooks can be found below:
+**For reference, all databricks html notebooks can be found below:**
 * [mini dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/1-Mini_Sparkify-Load_and_Investigate.html)
 * [mini dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
 * [large dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/1-Large_Sparkify-Load_Dataset_and_Investigate_EDA.html)
