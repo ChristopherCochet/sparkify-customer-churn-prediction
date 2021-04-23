@@ -8,20 +8,20 @@ Two datasets are provided:
 
 <kbd> <img src="images/music_service.png/?raw=true"/> </kbd>
 
-<ins>1. In a first phase we focus on the Sparkify mini dataset :  </ins>\
-  [ ] Load and perform EDA on the mini dataset answering business questions as we go along \
-  [ ] Identify customer that have churned  \
-  [ ] Transform the dadaset with the appropriate features and label so that supervised machine learning framework can be used  
+<ins>1. In a first phase we focus on the Sparkify mini dataset :  </ins>
+  * Load and perform EDA on the mini dataset answering business questions as we go along 
+  * Identify customer that have churned  
+  * Transform the dadaset with the appropriate features and label so that supervised machine learning framework can be used  
 
-  <ins>2. With a better understanding of the dataset, in a second phase, we turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>\
-  [ ] Load and perform EDA on the large dataset \
-  [ ] Pre-process the dataset, feature engineer and labels  \
-  [ ] Explore the processed dataset and perfom survival analysis \
-  [ ] Model and predict customer churn using Spark's ML libraries \
-  [ ] Evaluate models and assess results 
+  <ins>2. With a better understanding of the dataset, in a second phase, we turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>
+  * Load and perform EDA on the large dataset 
+  * Pre-process the dataset, feature engineer and labels  
+  * Explore the processed dataset and perfom survival analysis 
+  * Model and predict customer churn using Spark's ML libraries 
+  * Evaluate models and assess results 
 
 
-For reference: All databricks html notebooks can be found below:
+**For reference, all databricks html notebooks can be found below:**
 * [mini dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/1-Mini_Sparkify-Load_and_Investigate.html)
 * [mini dataset-preprocessing](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/mini-dataset/2-Mini_Sparkify-Preprocessing.html)
 * [large dataset-EDA](https://raw.githack.com/ChristopherCochet/sparkify-customer-churn-prediction/main/databricks-notebooks/large-dataset/1-Large_Sparkify-Load_Dataset_and_Investigate_EDA.html)
@@ -58,7 +58,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   We will be using Databricks Community Edition to analyze the Sparkify dataset and model customer churn. 
 
   
-<kbd> <img src="images/Databricks Community Edition.gif/?raw=true"/> </kbd
+<kbd> <img src="images/Databricks Community Edition.gif/?raw=true"> </kbd
 
 ---
 
@@ -97,8 +97,8 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   
   Below is a sample of a user's interactions with the service order by timestamp:
 
-    <kbd> <img src="images/user-sample.png/?raw=true"/> </kbd>
-
+  <kbd> <img src="images/user-sample.PNG/?raw=true"/> </kbd>
+    
   ## Perform EDA and answer service usage questions
 
   ### Sparkify mini dataset EDA Notebook
@@ -176,7 +176,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
 
   Lets look at what happens before and after a **Cancellation Confirmation** event occurs for a given user (userid 100015):
   1. the user has a paying subscription
-  2. the user goes to the downgrade page
+  2. the user goes to the Cancel page
   3. the user submits Cancellation Confirmation
   4. the user has now ended the sparkify subscription
 
