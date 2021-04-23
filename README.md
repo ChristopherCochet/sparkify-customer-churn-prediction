@@ -97,7 +97,7 @@ Sparkify is a music streaming dataset where users can use a free version of the 
   
   Below is a sample of a user's interactions with the service order by timestamp:
 
-    <kbd> <img src="https://github.com/ChristopherCochet/sparkify-customer-churn-prediction/blob/main/images/user-sample.PNG"/> </kbd>
+  <kbd> <img src="images/sparkify-background.PNG/?raw=true"/> </kbd>
     
   ## Perform EDA and answer service usage questions
 
