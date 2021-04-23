@@ -8,16 +8,16 @@ Two datasets are provided:
 
 <kbd> <img src="images/music_service.png/?raw=true"/> </kbd>
 
-<ins>1. In a first phase we focus on the Sparkify mini dataset :  </ins>\
-  * Load and perform EDA on the mini dataset answering business questions as we go along \
-  * Identify customer that have churned  \
+<ins>1. In a first phase we focus on the Sparkify mini dataset :  </ins>
+  * Load and perform EDA on the mini dataset answering business questions as we go along 
+  * Identify customer that have churned  
   * Transform the dadaset with the appropriate features and label so that supervised machine learning framework can be used  
 
-  <ins>2. With a better understanding of the dataset, in a second phase, we turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>\
-  * Load and perform EDA on the large dataset \
-  * Pre-process the dataset, feature engineer and labels  \
-  * Explore the processed dataset and perfom survival analysis \
-  * Model and predict customer churn using Spark's ML libraries \
+  <ins>2. With a better understanding of the dataset, in a second phase, we turn our attention to the large Sparkify dataset to perform churn predictions  :  </ins>
+  * Load and perform EDA on the large dataset 
+  * Pre-process the dataset, feature engineer and labels  
+  * Explore the processed dataset and perfom survival analysis 
+  * Model and predict customer churn using Spark's ML libraries 
   * Evaluate models and assess results 
 
 
